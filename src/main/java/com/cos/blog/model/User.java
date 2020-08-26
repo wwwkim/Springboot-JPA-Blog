@@ -10,7 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.hibernate.annotations.ColumnDefault;
+
 import org.hibernate.annotations.CreationTimestamp;
 
 
@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-//@DynamicInsert　： insertする時null fild除外
+//@DynamicInsert　： insertする時null field除外
 public class User {
 	@Id // Primary key
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // Depend on DB numbering
@@ -34,7 +34,7 @@ public class User {
 	@Column(nullable = false, length = 30, unique=true)
 	private String username;// id
 	
-	@Column(nullable = false, length = 100) // 12345=>暗号化するため
+	@Column(nullable = false, length = 100) 
 	private String password;
 	
 	@Column(nullable = false, length = 50)
