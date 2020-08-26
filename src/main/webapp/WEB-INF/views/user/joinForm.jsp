@@ -9,12 +9,12 @@
   <form>
     <div class="form-group">
       <label for="username">User name:</label>
-      <input type="text" autocomplete="username" class="form-control" placeholder="Enter User name " id="username">
+      <input type="text"  class="form-control" placeholder="Enter User name " id="username">
     </div>
     
     <div class="form-group">
       <label for="password">Password:</label>
-      <input type="password"  autocomplete="current-password" class="form-control"  placeholder="Enter password" id="password">
+      <input type="password" class="form-control"  placeholder="Enter password" id="password">
     </div>
     
     <div class="form-group">

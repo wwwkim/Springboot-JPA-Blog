@@ -5,17 +5,16 @@
 
 <div class="container">
   <h2>Login form</h2>
-  <form action="/action_page.php">
-  
+  <form>
     <div class="form-group">
       <label for="username">User name:</label>
-      <input type="text" class="form-control" id="username" placeholder="Enter User name " name="username">
+      <input type="text" class="form-control" id="username" placeholder="Enter User name " >
     </div>
     
   
     <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+      <label for="password">Password:</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter password" >
     </div>
     
     <div class="form-group form-check">
@@ -23,10 +22,11 @@
         <input class="form-check-input" type="checkbox" name="remember"> Remember me
       </label>
     </div>
-    <button type="submit" class="btn btn-primary">Sing in</button>
   </form>
+    <button id="btn-login" class="btn btn-primary">Login</button>
 </div>
 
+<script src="/blog/js/user.js"></</script>
 <%@ include file="../layout/footer.jsp"%>
 
 
