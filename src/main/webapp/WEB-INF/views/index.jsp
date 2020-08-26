@@ -6,21 +6,21 @@
 	<div class="card m-2">
 		<div class="card-body">
 			<h4 class="card-title">Title</h4>
-	
+
 			<a href="#" class="btn btn-primary">details</a>
 		</div>
 	</div>
 	<div class="card m-2">
 		<div class="card-body">
 			<h4 class="card-title">Title</h4>
-		
+
 			<a href="#" class="btn btn-primary">details</a>
 		</div>
 	</div>
 	<div class="card m-2">
 		<div class="card-body">
 			<h4 class="card-title">Title</h4>
-	
+
 			<a href="#" class="btn btn-primary">details</a>
 		</div>
 	</div>
