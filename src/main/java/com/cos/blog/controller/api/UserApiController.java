@@ -1,6 +1,6 @@
 package com.cos.blog.controller.api;
 
-import javax.servlet.http.HttpSession;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,7 +20,7 @@ public class UserApiController {
 	@Autowired
 	private UserService userService;
 
-	@PostMapping("/api/user")
+	@PostMapping("/auth/join")
 	public ResponseDto<Integer> save(@RequestBody User user) {
 		System.out.println("UserApiController: called save");
 
@@ -30,16 +30,7 @@ public class UserApiController {
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 
 	}
-	@PostMapping("/api/user/login")
-	public ResponseDto<Integer> lonin(@RequestBody User user,HttpSession session){
-		System.out.println("UserApiController: called login");
-		
-		User principal=userService.login(user);
-		if( principal !=null) {
-			session.setAttribute("principal", principal);
-		}
-		
-		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
-	}
+	
+	
 
 }
