@@ -40,7 +40,7 @@ public class Board {
 	@Lob//Big size data
 	private String content;
 	
-	@ColumnDefault("0")
+	
 	private int count;
 		
 	@ManyToOne(fetch=FetchType.EAGER)//Many=Board, One=User

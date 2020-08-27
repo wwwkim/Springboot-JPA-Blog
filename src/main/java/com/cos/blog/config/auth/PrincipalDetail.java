@@ -8,7 +8,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.cos.blog.model.User;
 
+import lombok.Getter;
+
 //Spring Security session
+@Getter
 public class PrincipalDetail implements UserDetails {
 
 
