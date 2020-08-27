@@ -4,28 +4,25 @@
 
 
 <div class="container">
-  <h2>Join Form</h2>
+	<h2>Join Form</h2>
 
-  <form>
-    <div class="form-group">
-      <label for="username">User name:</label>
-      <input type="text"  class="form-control" placeholder="Enter User name " id="username">
-    </div>
-    
-    <div class="form-group">
-      <label for="password">Password:</label>
-      <input type="password" class="form-control"  placeholder="Enter password" id="password">
-    </div>
-    
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control"  placeholder="Enter email" id="email">
-    </div>
-    
-  </form>
-  
-    <button id="btn-save" class="btn btn-primary">Sign in</button>
-    
+	<form>
+		<div class="form-group">
+			<label for="username">User name:</label> <input type="text" class="form-control" placeholder="Enter User name " id="username">
+		</div>
+
+		<div class="form-group">
+			<label for="password">Password:</label> <input type="password" class="form-control" placeholder="Enter password" id="password">
+		</div>
+
+		<div class="form-group">
+			<label for="email">Email:</label> <input type="email" class="form-control" placeholder="Enter email" id="email">
+		</div>
+
+	</form>
+
+	<button id="btn-save" class="btn btn-primary">Sign in</button>
+
 </div>
 
 <script src="/js/user.js"></script>
@@ -33,4 +30,3 @@
 <%@ include file="../layout/footer.jsp"%>
 
 
- 

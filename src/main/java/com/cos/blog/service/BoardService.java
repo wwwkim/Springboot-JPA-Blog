@@ -24,15 +24,23 @@ public class BoardService {
 
 	}
 
+	@Transactional(readOnly = true) // select
 	public Page<Board> boardList(Pageable pageable) {
 		return boardRepository.findAll(pageable);
 	}
 
+	@Transactional(readOnly = true) //select
 	public Board detail(int id) {
 
 		return boardRepository.findById(id).orElseThrow(() -> {
 			return new IllegalArgumentException("Failed: Could not find id");
 		});
 
+	}
+
+	@Transactional
+	public void delete(int id) {
+
+		boardRepository.deleteById(id);
 	}
 }
