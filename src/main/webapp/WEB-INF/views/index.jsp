@@ -9,7 +9,7 @@
 			<div class="card-body">
 				<h4 class="card-title">${board.title }</h4>
 
-				<a href="#" class="btn btn-primary">details</a>
+				<a href="/board/${board.id }" class="btn btn-primary">Details</a>
 			</div>
 		</div>
 	</c:forEach>
