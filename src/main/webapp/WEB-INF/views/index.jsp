@@ -3,27 +3,16 @@
 <%@ include file="layout/header.jsp"%>
 
 <div class="container">
+
+<c:forEach var="board" items="${boards }">
 	<div class="card m-2">
 		<div class="card-body">
-			<h4 class="card-title">Title</h4>
+			<h4 class="card-title">${board.title }</h4>
 
 			<a href="#" class="btn btn-primary">details</a>
 		</div>
 	</div>
-	<div class="card m-2">
-		<div class="card-body">
-			<h4 class="card-title">Title</h4>
-
-			<a href="#" class="btn btn-primary">details</a>
-		</div>
-	</div>
-	<div class="card m-2">
-		<div class="card-body">
-			<h4 class="card-title">Title</h4>
-
-			<a href="#" class="btn btn-primary">details</a>
-		</div>
-	</div>
+	</c:forEach>
 </div>
 
 <%@ include file="layout/footer.jsp"%>
