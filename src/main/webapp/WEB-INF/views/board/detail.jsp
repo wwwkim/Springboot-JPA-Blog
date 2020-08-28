@@ -24,7 +24,7 @@
 	<hr>
 	<button class="btn btn-secondary" onclick="history.back()">Back</button>
 	<c:if test="${board.user.id==principal.user.id }">
-	<button id="btn-update" class="btn btn-warning">Rewrite</button>
+	<a href="/board/${board.id }/updateForm" class="btn btn-warning">Rewrite</a>
 	<button id="btn-delete" class="btn btn-danger">Delete</button>
 	</c:if>
 </div>
