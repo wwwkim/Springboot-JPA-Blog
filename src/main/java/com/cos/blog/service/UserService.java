@@ -42,8 +42,7 @@ public class UserService {
 		persistance.setPassword(encPassword);
 		persistance.setEmail(user.getEmail());
 		
-		
-
+			
 
 	}
 

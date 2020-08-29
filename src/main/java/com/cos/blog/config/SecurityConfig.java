@@ -3,6 +3,7 @@ package com.cos.blog.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -16,7 +17,7 @@ import com.cos.blog.config.auth.PrincipalDetailService;
 @EnableWebSecurity // Security filter登録
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-	
+
 	@Autowired
 	private PrincipalDetailService principalDetailService;
 
@@ -25,22 +26,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		return new BCryptPasswordEncoder();
 	}
 
-	@Override // login時　DB　password 確認。Hash Password
+	@Bean
+	@Override
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+		// TODO Auto-generated method stub
+		return super.authenticationManagerBean();
+	}
+
+	@Override // login時 DB password 確認。Hash Password
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-	 auth.userDetailsService(principalDetailService).passwordEncoder(encodePWD());
+		auth.userDetailsService(principalDetailService).passwordEncoder(encodePWD());
 	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable()
-		.authorizeRequests()
-		.antMatchers("/", "/auth/**", "/js/**", "/css/**", "/image/**")
-				.permitAll()
-				.anyRequest()
-				.authenticated()
-				.and()
-				.formLogin()
-				.loginPage("/auth/loginForm")
+		http.csrf().disable().authorizeRequests().antMatchers("/", "/auth/**", "/js/**", "/css/**", "/image/**")
+				.permitAll().anyRequest().authenticated().and().formLogin().loginPage("/auth/loginForm")
 				.loginProcessingUrl("/auth/loginProc") // Spring securityがlogin処理をする。
 				.defaultSuccessUrl("/"); // login成功時 "/" へ.
 
