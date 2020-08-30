@@ -6,15 +6,23 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.cos.blog.dto.ReplySaveDto;
 import com.cos.blog.model.Board;
+import com.cos.blog.model.Reply;
 import com.cos.blog.model.User;
 import com.cos.blog.repository.BoardRepository;
+import com.cos.blog.repository.ReplyRepository;
+import com.cos.blog.repository.UserRepository;
 
 @Service
 public class BoardService {
 
 	@Autowired
+	private ReplyRepository replyRepository;
+	@Autowired
 	private BoardRepository boardRepository;
+	@Autowired
+	private UserRepository userRepository;
 
 	@Transactional
 	public void write(Board board, User user) {
@@ -52,5 +60,19 @@ public class BoardService {
 
 		board.setTitle(requestBoard.getTitle());
 		board.setContent(requestBoard.getContent());
+	}
+
+	@Transactional
+	public void commentWrite(ReplySaveDto replySaveDto) {
+		User user = userRepository.findById(replySaveDto.getUserId()).orElseThrow(()->{
+			return new IllegalArgumentException("Failed:Could not find UserId");
+		});
+		Board board=boardRepository.findById(replySaveDto.getBoardId()).orElseThrow(()->{
+			return new IllegalArgumentException("Failed:Could not find BoardId");
+		});
+		
+		Reply reply=Reply.builder().user(user).board(board).content(replySaveDto.getContent()).build();
+		replyRepository.save(reply);
+		
 	}
 }

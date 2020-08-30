@@ -24,24 +24,29 @@
 
 
 	<div class="card">
-		<div class="card-body">
-			<textarea class="form-control" rows="1"></textarea>
-		</div>
-		<div class="card-footer">
-			<button class="btn btn-primary">save comment</button>
-		</div>
+		<form>
+		<input type="hidden" id="userId" value="${principal.user.id}"/>
+			<input type="hidden" id="boardId" value="${board.id }" />
+			<div class="card-body">
+				<textarea id="reply-content" class="form-control" rows="1"></textarea>
+			</div>
+			<div class="card-footer">
+				<button type="button" id="btn-reply-save"class="btn btn-primary">save comment</button>
+			</div>
+		</form>
 	</div>
-	<br>
-	<div class="card">
+	<br> 
 		<div class="card-header">Comment List</div>
-		<ul id="comment--box" class="list-group">
-			<li id="comment--1" class="list-group-item d-flex justify-content-between">
-				<div>First comment!!</div>
-				<div class="d-flex">
-					<div class="font-italic">Writer:ssar &nbsp;</div>
-					<button class="badge">Delete</button>
-				</div>
-			</li>
+		<ul id="reply--box" class="list-group">
+			<c:forEach var="relpy" items="${board.replys }">
+				<li id="reply--1" class="list-group-item d-flex justify-content-between">
+					<div>${relpy.content}</div>
+					<div class="d-flex">
+						<div class="font-italic">Writer :${reply.user.username } &nbsp;</div>
+						<button class="badge">Delete</button>
+					</div>
+				</li>
+			</c:forEach>
 		</ul>
 
 	</div>
