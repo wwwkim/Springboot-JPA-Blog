@@ -97,6 +97,22 @@ update: function(){
 			  
 		  });
 	  },
+	  replyDelete: function(boardId, replyId){
+		  
+		  $.ajax({
+			  type:"DELETE",
+			  url:`/api/board/${boardId}/reply/${replyId}`, //not single quotation(') but grave(`)
+			  dataType:"json"
+				  
+		  }).done(function(resp){
+			  alert("Deleted comment");
+			  location.href=`/board/${boardId}`; //not single quotation(') but grave(`)
+			  
+		  }).fail(function(error){
+			  alert(JSON.stringify(error))
+			  
+		  });
+	  },
 		deleteById: function(){
 			
 			let id=$("#id").text();

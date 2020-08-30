@@ -21,8 +21,8 @@ public class BoardService {
 	private ReplyRepository replyRepository;
 	@Autowired
 	private BoardRepository boardRepository;
-	@Autowired
-	private UserRepository userRepository;
+//	@Autowired
+//	private UserRepository userRepository;
 
 	@Transactional
 	public void write(Board board, User user) {
@@ -37,7 +37,7 @@ public class BoardService {
 		return boardRepository.findAll(pageable);
 	}
 
-	@Transactional(readOnly = true) //select
+	@Transactional(readOnly = true) // select
 	public Board detail(int id) {
 
 		return boardRepository.findById(id).orElseThrow(() -> {
@@ -54,7 +54,7 @@ public class BoardService {
 
 	@Transactional
 	public void update(int id, Board requestBoard) {
-		Board board=boardRepository.findById(id).orElseThrow(() -> {
+		Board board = boardRepository.findById(id).orElseThrow(() -> {
 			return new IllegalArgumentException("Failed: Could not find id");
 		});
 
@@ -64,15 +64,25 @@ public class BoardService {
 
 	@Transactional
 	public void commentWrite(ReplySaveDto replySaveDto) {
-		User user = userRepository.findById(replySaveDto.getUserId()).orElseThrow(()->{
-			return new IllegalArgumentException("Failed:Could not find UserId");
-		});
-		Board board=boardRepository.findById(replySaveDto.getBoardId()).orElseThrow(()->{
-			return new IllegalArgumentException("Failed:Could not find BoardId");
-		});
-		
-		Reply reply=Reply.builder().user(user).board(board).content(replySaveDto.getContent()).build();
-		replyRepository.save(reply);
-		
+//		User user = userRepository.findById(replySaveDto.getUserId()).orElseThrow(()->{
+//			return new IllegalArgumentException("Failed:Could not find UserId");
+//		});
+//		Board board=boardRepository.findById(replySaveDto.getBoardId()).orElseThrow(()->{
+//			return new IllegalArgumentException("Failed:Could not find BoardId");
+//		});
+//		
+//		Reply reply=Reply.builder().user(user).board(board).content(replySaveDto.getContent()).build();
+//		replyRepository.save(reply);
+//		
+
+		// Using nativeQuery
+		replyRepository.mSave(replySaveDto.getUserId(), replySaveDto.getBoardId(), replySaveDto.getContent());
+
+	}
+
+	@Transactional
+	public void replyDelete(int replyId) {
+		replyRepository.deleteById(replyId);
+
 	}
 }

@@ -27,6 +27,14 @@ public class BoardApiController {
 	private BoardService boardService;
 	
 	
+	@DeleteMapping("/api/board/{boardId}/reply/{replyId}")
+	public ResponseDto<Integer> replyDelete(@PathVariable int replyId){
+		System.out.println("BoardApiController: called replyDelete");
+		boardService.replyDelete(replyId);
+		return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
+		
+	}
+	
 	
 	@PutMapping("/api/board/{id}")
 	public ResponseDto<Integer> update(@PathVariable int id,@RequestBody Board board){

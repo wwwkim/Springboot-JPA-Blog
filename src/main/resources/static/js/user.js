@@ -28,10 +28,14 @@ let index={
 		  dataType:"json"
 		  
 	  }).done(function(resp){
-		  alert("Sign in successfully");
-		 // console.log(resp);
-		  location.href="/";
-		  
+		  if(resp.status==500){
+			  alert("Aleardy existed ID");
+		  }else{
+			  
+			  alert("Sign in successfully");
+			  location.href="/";
+			  
+		  }
 	  }).fail(function(error){
 		  alert(JSON.stringify(error))
 		  

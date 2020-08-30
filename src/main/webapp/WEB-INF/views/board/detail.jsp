@@ -37,20 +37,21 @@
 	</div>
 	<br> 
 		<div class="card-header">Comment List</div>
-		<ul id="reply--box" class="list-group">
-			<c:forEach var="relpy" items="${board.replys }">
-				<li id="reply--1" class="list-group-item d-flex justify-content-between">
-					<div>${relpy.content}</div>
+		<ul id="reply-box" class="list-group">
+			<c:forEach var="reply" items="${board.replys}">
+			
+				<li id="reply-${reply.id }" class="list-group-item d-flex justify-content-between">
+				<div>${reply.content}</div>
 					<div class="d-flex">
-						<div class="font-italic">Writer :${reply.user.username } &nbsp;</div>
-						<button class="badge">Delete</button>
+						<div class="font-italic">Writer :${reply.user.username}  </div>
+						<button onClick="index.replyDelete(${board.id},${reply.id })"class="badge">Delete</button>
 					</div>
 				</li>
 			</c:forEach>
 		</ul>
 
 	</div>
-</div>
+
 
 
 <script>
