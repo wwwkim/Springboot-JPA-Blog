@@ -22,4 +22,5 @@
 ![image](https://user-images.githubusercontent.com/59782869/91735308-16294e80-ebe7-11ea-9f79-c2033d5bf8b5.png)
 ### Content Detail Page
 ![image](https://user-images.githubusercontent.com/59782869/91735992-065e3a00-ebe8-11ea-9be0-0839decc035b.png)
-
+### Content Write Page
+![image](https://user-images.githubusercontent.com/59782869/91736383-897f9000-ebe8-11ea-9607-ec1fe8321a83.png)
