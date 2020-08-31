@@ -15,6 +15,7 @@
 - Java Script
 
 ### Main Page
+Show Detail list,pagaing(3 items on 1 page)
 ![image](https://user-images.githubusercontent.com/59782869/91731207-a06eb400-ebe1-11ea-9f72-a80401d556c9.png)
 ### Join Page
 ![image](https://user-images.githubusercontent.com/59782869/91735450-4b35a100-ebe7-11ea-9b85-03fc67522a0f.png)
