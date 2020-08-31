@@ -15,11 +15,9 @@
 - Java Script
 
 ### Main Page
-
 ![image](https://user-images.githubusercontent.com/59782869/91731207-a06eb400-ebe1-11ea-9f72-a80401d556c9.png)
 ### Join Page
-
+![image](https://user-images.githubusercontent.com/59782869/91735450-4b35a100-ebe7-11ea-9b85-03fc67522a0f.png)
 ### Login Page
-
 ![image](https://user-images.githubusercontent.com/59782869/91735308-16294e80-ebe7-11ea-9f79-c2033d5bf8b5.png)
 
