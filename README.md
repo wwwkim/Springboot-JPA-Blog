@@ -20,4 +20,4 @@
 ### Join Page
 
 ### Login Page
-![image](https://user-images.githubusercontent.com/59782869/91734977-9dc28d80-ebe6-11ea-8d5e-1ba89cda68ab.png)
+
